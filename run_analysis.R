@@ -19,13 +19,12 @@ activity_labels_dt <- data.table(read.csv("./UCI HAR Dataset/activity_labels.txt
 subject_train_dt <- data.table(read.csv("./UCI HAR Dataset/train/subject_train.txt", header=FALSE, sep=" ", col.names=c("subject_id")))
 
 ## Read the subject id's of the training group
-subject_train_dt <- data.table(read.csv("./UCI HAR Dataset/train/subject_train.txt", header=FALSE, sep=" ", col.names=c("subject_id")))
+training_activity_class_dt <- data.table(read.csv("./UCI HAR Dataset/train/y_train.txt", header=FALSE, sep=" ", col.names=c("activity_class")))
+
+## Read the training time and frequency domain variables (561 columns)
+## Assign the correct column names from features_dt
+## Takes a few seconds to complete...
+training_set_dt <- read.csv("./UCI HAR Dataset/train/X_train.txt",header=FALSE, sep="", col.names=features_dt$feature)
 
 
 
-wv <- seq(16, count=561)
-dt <- read.fwf("./UCI HAR Dataset/features.txt", widths=wv, skip=0, header=FALSE)
-## data.table version
-dt <- data.table(df)
-dt[,sum(V4)]
-#[1] 32426.7
