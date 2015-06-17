@@ -116,7 +116,9 @@ extracted_data_set <- select(extracted_data_set, -activity_class)
 ################################################################################
 ## This is a split, apply, combine problem:
 ## If not already done: install.packages("plyr")
+## If not already done: install.packages("reshape2")
 library(plyr)
+library(reshape2)
 
 # melting & casting with averaging on activity and subject for all variables, calculating the mean
 tidy_data_Melt <- melt(extracted_data_set,id=c("activity","subject"))
