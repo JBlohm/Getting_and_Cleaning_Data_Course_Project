@@ -13,8 +13,12 @@
 ## (data.table used for convenience and speed)
 ## Good info source: http://www.cookbook-r.com/Data_input_and_output/Loading_data_from_a_file/
 library(data.table)
+## If not already done: install.packages("plyr")
+library(plyr)
 ## If not already done: install.packages("dplyr")
 library(dplyr)
+## If not already done: install.packages("reshape2")
+library(reshape2)
 
 ####################################
 ## Get features and activity data ##
@@ -85,7 +89,15 @@ test_set_dt <- mutate(test_set_dt, subject = subject_test_dt)
 #####################################################
 
 ## Put test group observations below training groups
-data_set <- rbind(training_set_dt, test_set_dt)
+#data_set <- rbind(training_set_dt, test_set_dt)
+## Too bad, this command SOMETIMES runs into errors:
+## http://stackoverflow.com/questions/22766738/r-rbind-error-row-names-duplicates-not-allowed
+
+## Alternative way to do it:
+## [R] Fast / dependable way to "stack together" data frames from a  list
+## https://stat.ethz.ch/pipermail/r-help/2010-September/252046.html
+mylist <- list(training_set_dt, test_set_dt)
+data_set <- rbind.fill(mylist)
 
 #########################################################
 ## Extract only the measurements on the mean an std. dev.
@@ -115,10 +127,6 @@ extracted_data_set <- select(extracted_data_set, -activity_class)
 ## Create the tidy data set with the average (mean) of each activity per subject
 ################################################################################
 ## This is a split, apply, combine problem:
-## If not already done: install.packages("plyr")
-## If not already done: install.packages("reshape2")
-library(plyr)
-library(reshape2)
 
 # melting & casting with averaging on activity and subject for all variables, calculating the mean
 tidy_data_Melt <- melt(extracted_data_set,id=c("activity","subject"))
