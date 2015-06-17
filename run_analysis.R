@@ -6,6 +6,7 @@
 ## The whole script needs a few more seconds to run, ... be patient
 ##
 ## Open: include innertial signals?
+## Idea: Extract mean etc. values based in matching part of name -> list -> extract
 ##
 
 ## If not already done: install.packages("data.table")
@@ -79,7 +80,12 @@ test_set_dt <- mutate(test_set_dt, activity_class = test_activity_class_dt)
 ## based on data in subject_test_dt
 test_set_dt <- mutate(test_set_dt, subject = subject_test_dt)
 
+#####################################################
+## Combining observations from training & test tables
+#####################################################
 
+## Put test group observations below traing groups
+data_set <- rbind(training_set_dt, test_set_dt)
 
 
 
