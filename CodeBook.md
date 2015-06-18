@@ -73,17 +73,12 @@ Please refer to [1] and [2].
 
 "activity" values:
 
-WALKING
-
-WALKING_UPSTAIRS
-
-WALKING_DOWNSTAIRS
-
-SITTING
-
-STANDING
-
-LAYING
+WALKING 
+WALKING_UPSTAIRS  
+WALKING_DOWNSTAIRS   
+SITTING 
+STANDING  
+LAYING  
 
 "subject" values:
 
