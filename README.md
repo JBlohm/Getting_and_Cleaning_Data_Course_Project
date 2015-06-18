@@ -1,4 +1,4 @@
-##Getting an Cleaning Data Course Project
+##Getting and Cleaning Data Course Project
 
 This repository contains the script which required to build a tidy data set out of the raw data provided via this link:
 
