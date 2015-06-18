@@ -71,7 +71,7 @@ Please refer to [1] and [2].
 
 ###Variables in tidy data set
 
-"activity" values:
+####"activity" values:
 
 WALKING  
 WALKING_UPSTAIRS  
@@ -80,11 +80,11 @@ SITTING
 STANDING  
 LAYING  
 
-"subject" values:
+####"subject" values:
 
 1 - 30 The subject who carried out the experiment, represented as a number
 
-Feature values: (For each measurement the mean, stddev)
+####Feature values: (For each measurement the mean, stddev)
 
 "tBodyAcc.mean...X"  
 "tBodyAcc.mean...Y"  
