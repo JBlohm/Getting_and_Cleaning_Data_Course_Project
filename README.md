@@ -6,9 +6,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 The data needs to be extracted from the zip file into your working directory.
 
-The R script *run_analysis.R* also needs to be located in wour working directory.
+The R script *run_analysis.R* also needs to be located in your working directory.
 
-The R script called run_analysis.R that does the following:
+The R script called *run_analysis.R* that does the following:
 
 Merges the training and the test sets to create one data set.
 
